@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="myStyle.css">
+
+	<meta name="attrib" content="pink" />
+</head>
+<body>
+
+	<div class="header" id="something">
+
+		<h2>TAE-HYUN "TERRENCE" RYU</h2>
+
+		<a class="buttons" href="home.html">Go Home</a>
+
+	</div>
+
+	<div class="tab">
+		<button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Biography')">Biography</button>
+		<button class="tablinks" onclick="openTab(event, 'Gallery')">Gallery</button>
+		<button class="tablinks" onclick="openTab(event, 'Relations')">Relations</button>
+	</div>
+
+	<div id="Biography" class="tabcontent">
+		<img class="pp" src="../images/terrence/0.png">
+		<p>
+			<ul id="bioList">
+			
+			</ul>
+			<img class="pleasekillmenowputmeoutofmymisery" src="../icons/b.png">
+		</p>
+	</div>
+
+	<div id="Gallery" class="tabcontent">
+		<a href="../images/terrence/0.png" target="_blank">
+			<img class="galleryImg" src="../images/terrence/0.png">
+		</a>
+		<a href="../images/terrence/1.png" target="_blank">
+			<img class="galleryImg" src="../images/terrence/1.png">
+		</a>
+		<a href="../images/terrence/2.png" target="_blank">
+			<img class="galleryImg" src="../images/terrence/2.png">
+		</a>
+		<a href="../images/terrence/3.png" target="_blank">
+			<img class="galleryImg" src="../images/terrence/3.png">
+		</a>
+	</div>
+
+	<div id="Relations" class="tabcontent">
+		<div class="relationBox">
+			<a class="relationLink" href="kta.html">
+				<img class="icon" src="../icons/kta.png">
+				<h3>Kta Lon</h3>
+				<h4>Best Friend</h4>
+			</a>
+		</div>
+	</div>
+
+	<script src="myScript.js"></script>
+	<script src="jquery.js"></script>
+	<script>
+    	/*var pageName = "template";*/
+
+		document.getElementById("defaultOpen").click();
+
+		var myOC = 
+			new Character(
+				'Tae-hyun "Terrence" Ryu', 
+				"Terrence, Terry",
+				"Human",
+				"Male",
+				"17",
+				"November 17",
+				null,
+				"Terry's parents both work for the far-space exploration and colonization program know as NOSAC. They lived in South Korea until Terrence was four years old, at which point they moved to the planet Neo Terra. Terrence is now essentially alone in their home there, as his parents have been off in different parts of the galaxy, only calling in once in a while to assign him some research to do for them. He's the only human child in the Neo Terra colony, and had trouble making friends at school for years, until he met Kta and became friends with her. Despite being very friendly and courteous, he still has some trust issues, not to mention a bit of a rebellious streak.",
+				"The markings on his face are a physical manifestion of a magical elixir. They disappear when his ability wears off."
+				);
+
+		var ind = 0;
+		var element = document.getElementById("bioList");
+
+		for(var property in myOC){
+			if(myOC.hasOwnProperty(property) && myOC[property]!=null){
+				var bullet = document.createElement("li");
+				bullet.classList.add('q');
+				var node = document.createTextNode(questionList[ind]);
+				bullet.appendChild(node);
+				element.appendChild(bullet);
+				
+
+				var bullet = document.createElement("li");
+				bullet.classList.add('a');
+				var node = document.createTextNode(myOC[property]);
+				bullet.appendChild(node);
+				element.appendChild(bullet);
+			}
+			ind++;
+		}
+
+	</script>
+
+</body>
+</html>

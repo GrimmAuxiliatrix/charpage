@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="myStyle.css">
+
+	<meta name="attrib" content="pink" />
+</head>
+<body>
+
+	<div class="header" id="something">
+
+		<h2>CHROE</h2>
+
+		<a class="buttons" href="home.html">Go Home</a>
+
+	</div>
+
+	<div class="tab">
+		<button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Biography')">Biography</button>
+		<button class="tablinks" onclick="openTab(event, 'Gallery')">Gallery</button>
+		<button class="tablinks" onclick="openTab(event, 'Relations')">Relations</button>
+	</div>
+
+	<div id="Biography" class="tabcontent">
+		<img class="pp" src="../images/chroe/2.png">
+		<p>
+			<ul id="bioList">
+			
+			</ul>
+			<img class="pleasekillmenowputmeoutofmymisery" src="../icons/l.png">
+			<img class="pleasekillmenowputmeoutofmymisery" src="../icons/n.png">
+		</p>
+	</div>
+
+	<div id="Gallery" class="tabcontent">
+		<a href="../images/chroe/2.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/2.png">
+		</a>
+		<a href="../images/chroe/10.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/10.png">
+		</a>
+		<a href="../images/chroe/1.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/1.png">
+		</a>
+		<!--<a href="../images/chroe/3.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/3.png">
+		</a>-->
+		<a href="../images/chroe/4.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/4.png">
+		</a>
+		<a href="../images/chroe/5.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/5.png">
+		</a>
+		<a href="../images/chroe/6.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/6.png">
+		</a>
+		<a href="../images/chroe/7.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/7.png">
+		</a>
+		<a href="../images/chroe/8.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/8.png">
+		</a>
+		<a href="../images/chroe/9.png" target="_blank">
+			<img class="galleryImg" src="../images/chroe/9.png">
+		</a>
+	</div>
+
+	<div id="Relations" class="tabcontent">
+		<div class="relationBox">
+			<a class="relationLink" href="ivan.html">
+				<img class="icon" src="../icons/ivan.png">
+				<h3>Ivan</h3>
+				<h4>Half-brother</h4>
+			</a>
+		</div>
+	</div>
+
+	<script src="myScript.js"></script>
+	<script src="jquery.js"></script>
+	<script>
+    	/*var pageName = "template";*/
+
+		document.getElementById("defaultOpen").click();
+
+		var myOC = 
+			new Character(
+				"Chroe", 
+				null,
+				"Mutacorpean",
+				"Female?",
+				"16",
+				"May 30",
+				"In her authentic, monstrous form she can shapeshift and emit a powerful blast. In all forms she is an expert with elixirs, electrical magic, and hand-to-hand combat.",
+				"There is so much lore behind Chroe and her half-brother. There is so much delicious lore, and I am not going to type up any of it right now.",
+				null
+				);
+
+		var ind = 0;
+		var element = document.getElementById("bioList");
+
+		for(var property in myOC){
+			if(myOC.hasOwnProperty(property) && myOC[property]!=null){
+				var bullet = document.createElement("li");
+				bullet.classList.add('q');
+				var node = document.createTextNode(questionList[ind]);
+				bullet.appendChild(node);
+				element.appendChild(bullet);
+				
+
+				var bullet = document.createElement("li");
+				bullet.classList.add('a');
+				var node = document.createTextNode(myOC[property]);
+				bullet.appendChild(node);
+				element.appendChild(bullet);
+			}
+			ind++;
+		}
+
+
+	</script>
+
+</body>
+</html>
