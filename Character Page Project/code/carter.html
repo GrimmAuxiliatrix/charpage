@@ -9,7 +9,7 @@
 
 	<div class="header" id="something">
 
-		<h2>CARTER McKAIN</h2>
+		<h2>CARTER MCKAIN</h2>
 
 		<a class="buttons" href="home.html">Go Home</a>
 
@@ -97,19 +97,17 @@
     		var ext = ".png";
     		var keepGoing = true;
     		var fileNum = 0;
-    		while(keepGoing && fileNum<3){
+    		while(0==0){
     			var src= "../images/carter/" + fileNum + ext;
     			var img = new Image();
-    			img.src = src;
-    			img.classList = "galleryImg";
-    			if(img.width>0){
-    					element.appendChild(img);
-    					fileNum++;
-    				}
-    				else{
-    					keepGoing = false;
-    				}
+    			img.onerror = function(){
+    				break;
+    				img.src = "../carter/" + fileNum-1 + ext;
     			}
+    			img.src = src;
+    			element.appendChild(img);
+    			fileNum++;
+    		}
 		});
 
 
