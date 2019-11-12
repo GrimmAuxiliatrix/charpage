@@ -36,7 +36,7 @@
 	</div>
 
 	<div id="Gallery" class="tabcontent">
-		<a href="../images/carter/0.png" target="_blank">
+		/*<a href="../images/carter/0.png" target="_blank">
 			<img class="galleryImg" src="../images/carter/0.png">
 		</a>
 		<a href="../images/carter/1.png" target="_blank">
@@ -44,7 +44,7 @@
 		</a>
 		<a href="../images/carter/2.png" target="_blank">
 			<img class="galleryImg" src="../images/carter/2.png">
-		</a>
+		</a>*/
 	</div>
 
 	<!--<div id="Relations" class="tabcontent">
@@ -91,6 +91,26 @@
 			}
 			ind++;
 		}
+		
+		$( document ).ready(function() {
+			element = document.getElementById("Gallery");
+    		var ext = ".png";
+    		var keepGoing = true;
+    		var fileNum = 0;
+    		while(keepGoing && fileNum<3){
+    			var src= "../images/carter/" + fileNum + ext;
+    			var img = new Image();
+    			img.src = src;
+    			img.classList = "galleryImg";
+    			if(img.width>0){
+    					element.appendChild(img);
+    					fileNum++;
+    				}
+    				else{
+    					keepGoing = false;
+    				}
+    			}
+		});*/
 
 
 	</script>
