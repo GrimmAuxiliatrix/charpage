@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="myStyle.css">
+
+	<meta name="attrib" content="pink" />
+</head>
+<body>
+
+	<div class="header" id="something">
+
+		<h2>ASTRID FAIZAH</h2>
+
+		<a class="buttons" href="home.html">Go Home</a>
+
+	</div>
+
+	<div class="tab">
+		<button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Biography')">Biography</button>
+		<button class="tablinks" onclick="openTab(event, 'Gallery')">Gallery</button>
+		<!--<button class="tablinks" onclick="openTab(event, 'Relations')">Relations</button>-->
+	</div>
+
+	<div id="Biography" class="tabcontent">
+		<img class="pp" src="../images/astrid/0.png">
+		<p>
+			<ul id="bioList">
+			
+			</ul>
+      <ul id="i_am_stupid_:(">
+				<li class="q">Extra</li>
+				<li class="a">Her theme song is <a href="https://www.youtube.com/watch?v=LfephiFN76E">No Title by REOL.</a></li>
+			</ul>
+		</p>
+	</div>
+
+	<div id="Gallery" class="tabcontent">
+		<a href="../images/replaceme/0.png" target="_blank">
+			<img class="galleryImg" src="../images/astrid/0.png">
+		</a>
+		<a href="../images/replaceme/1.png" target="_blank">
+			<img class="galleryImg" src="../images/astrid/1.png">
+		</a>
+		<a href="../images/replaceme/2.png" target="_blank">
+			<img class="galleryImg" src="../images/astrid/2.png">
+		</a>
+	</div>
+
+<!--<div id="Relations" class="tabcontent">
+		<p>None worth mentioning :-( Sad</p>
+	</div>-->
+
+	<script src="myScript.js"></script>
+	<script src="jquery.js"></script>
+	<script>
+    	/*var pageName = "template";*/
+		document.getElementById("defaultOpen").click();
+		var myOC = 
+			new Character(
+				"Astrid Faizah", 
+				null,
+				"Human",
+				"Female",
+				"23",
+				null,
+				"Public speaking",
+				"The young ambassador of the country. She's looking forward to learning and seeing all sorts of new things. Cheerful yet mature. Seems sleep-deprived. Has a secret up her sleeve?",
+				null
+				);
+		var ind = 0;
+		var element = document.getElementById("bioList");
+		for(var property in myOC){
+			if(myOC.hasOwnProperty(property) && myOC[property]!=null){
+				var bullet = document.createElement("li");
+				bullet.classList.add('q');
+				var node = document.createTextNode(questionList[ind]);
+				bullet.appendChild(node);
+				element.appendChild(bullet);
+				
+				var bullet = document.createElement("li");
+				bullet.classList.add('a');
+				var node = document.createTextNode(myOC[property]);
+				bullet.appendChild(node);
+				element.appendChild(bullet);
+			}
+			ind++;
+		}
+		/*$( document ).ready(function() {
+			element = document.getElementById("Gallery");
+    		var ext = ".png";
+    		var keepGoing = true;
+    		var fileNum = 0;
+    		while(keepGoing && fileNum<3){
+    			var src= "../images/template/" + fileNum + ext;
+    			var img = new Image();
+    			img.src = src;
+    			img.classList = "galleryImg";
+    			if(img.width>0){
+    					element.appendChild(img);
+    					fileNum++;
+    				}
+    				else{
+    					keepGoing = false;
+    				}
+    			}
+    		while(0==0){
+    			var src= "../images/template/" + fileNum + ext;
+    			var img = new Image();
+    			img.onerror = function(){
+    				break;
+    				img.src = "../images/template/" + fileNum-1 + ext;
+    			}
+    			img.src = src;
+    			element.appendChild(img);
+    			fileNum++;
+    		}
+		});*/
+	</script>
+
+</body>
+</html>
