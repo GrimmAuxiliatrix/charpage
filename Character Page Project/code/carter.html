@@ -110,7 +110,7 @@
 	}
 });*/
 		
-		$(document).ready(function() {
+		/*$(document).ready(function() {
 			var folder = "../images/carter/";
 			$.ajax({
     			url : folder,
@@ -122,7 +122,18 @@
         				});
     				}
 			});
+		});*/
+	$(document).ready(function() {
+		$.ajax({
+  			url: "http://yoursite.com/images/",
+  			success: function(data){
+     			$(data).find("td > a").each(function(){
+        			// will loop through 
+       				alert("Found a file: " + $(this).attr("href"));
+     			});
+  			}
 		});
+	});
 
 
 	</script>
