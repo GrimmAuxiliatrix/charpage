@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="myStyle.css">
-
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 	<meta name="attrib" content="pink" />
 </head>
 <body>
@@ -92,7 +92,7 @@
 			ind++;
 		}
 		
-		$( document ).ready(function() {
+		/*$( document ).ready(function() {
 		gallerybox = document.getElementById("Gallery");
     		var ext = ".png";
     		var keepGoing = true;
@@ -108,7 +108,22 @@
 				break;	
 			}
     		}
-	});
+	}
+});*/
+		
+		*$(document).ready(function() {
+			var folder = "../images/carter/";
+			$.ajax({
+    			url : folder,
+    				success: function (data) {
+        				$(data).find("a").attr("href", function (i, val) {
+            					if( val.match(/\.(png|gif)$/) ) { 
+                					$("#Gallery").append( "<img src='"+ folder + val +"'>" );
+            					} 
+        				});
+    				}
+			});
+		});
 
 
 	</script>
